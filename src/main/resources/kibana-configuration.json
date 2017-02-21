@@ -1,0 +1,252 @@
+[
+  {
+    "_id": "a866a120-e8bd-11e6-8337-4bfdb7eac365",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Enterprise Events Overview Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"3ad59e40-e8bd-11e6-8337-4bfdb7eac365\",\"panelIndex\":1,\"row\":7,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"type\",\"created_by.login\",\"source.item_name\",\"source.item_type\",\"source.item_id\",\"additional_details.size\",\"source.parent.name\",\"source.parent.type\",\"source.parent.id\"],\"id\":\"283386e0-e8bc-11e6-8337-4bfdb7eac365\",\"panelIndex\":2,\"row\":14,\"size_x\":12,\"size_y\":7,\"sort\":[\"created_at\",\"desc\"],\"type\":\"search\"},{\"col\":7,\"id\":\"decf2ea0-e8c5-11e6-8d99-5f7ec6c1a2af\",\"panelIndex\":3,\"row\":3,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":3,\"id\":\"ffd28290-e8cb-11e6-bed2-8313e760a6d2\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":6,\"id\":\"11715030-e8cc-11e6-bed2-8313e760a6d2\",\"panelIndex\":5,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":8,\"id\":\"e0fb27a0-e8cb-11e6-bed2-8313e760a6d2\",\"panelIndex\":6,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"3ec1c910-ec8d-11e6-a4b8-39bad3d9867a\",\"panelIndex\":8,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"183a7ce0-ec94-11e6-82fa-7dea2d1ff284\",\"panelIndex\":9,\"row\":11,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"5e7d5280-ed8a-11e6-99eb-d9b4b01f8a7b\",\"panelIndex\":10,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"d6ac1e20-ed8b-11e6-99eb-d9b4b01f8a7b\",\"panelIndex\":11,\"row\":3,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"ad6ff460-ec90-11e6-8b6b-0ff34ff8c9d6\",\"panelIndex\":12,\"row\":7,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":true}},\"P-3\":{\"vis\":{\"legendOpen\":true}},\"P-12\":{\"vis\":{\"defaultColors\":{\"0 - 6\":\"rgb(255,245,240)\",\"6 - 12\":\"rgb(253,212,194)\",\"12 - 18\":\"rgb(252,160,130)\",\"18 - 24\":\"rgb(251,106,74)\",\"24 - 30\":\"rgb(227,47,39)\",\"30 - 35\":\"rgb(177,18,24)\"}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-1M",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "283386e0-e8bc-11e6-8337-4bfdb7eac365",
+    "_type": "search",
+    "_source": {
+      "title": "Enterprise Events Overview",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "type",
+        "created_by.login",
+        "source.item_name",
+        "source.item_type",
+        "source.item_id",
+        "additional_details.size",
+        "source.parent.name",
+        "source.parent.type",
+        "source.parent.id"
+      ],
+      "sort": [
+        "created_at",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "240dd530-e8c0-11e6-8475-019222a58d31",
+    "_type": "visualization",
+    "_source": {
+      "title": "Uploads Over Time",
+      "visState": "{\"type\":\"timelion\",\"title\":\"Uploads Over Time\",\"params\":{\"expression\":\".es(type.keyword:UPLOAD)\",\"interval\":\"auto\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "6bfddaf0-e8cc-11e6-bed2-8313e760a6d2",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Comments",
+      "visState": "{\"title\":\"Total Comments\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Comments Created\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:COMMENT_CREATE\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1bab6100-e8c0-11e6-8475-019222a58d31",
+    "_type": "visualization",
+    "_source": {
+      "title": "Previews Over Time",
+      "visState": "{\"type\":\"timelion\",\"title\":\"Previews Over Time\",\"params\":{\"expression\":\".es(type.keyword:PREVIEW)\",\"interval\":\"auto\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "ffd28290-e8cb-11e6-bed2-8313e760a6d2",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Downloads",
+      "visState": "{\"title\":\"Total Downloads\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Downloads\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:DOWNLOAD\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e0fb27a0-e8cb-11e6-bed2-8313e760a6d2",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Previews",
+      "visState": "{\"title\":\"Total Previews\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Previews\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:PREVIEW\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3ec1c910-ec8d-11e6-a4b8-39bad3d9867a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Enterprise Events",
+      "visState": "{\"title\":\"Total Enterprise Events\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Events Created\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "11715030-e8cc-11e6-bed2-8313e760a6d2",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Uploads",
+      "visState": "{\"title\":\"Total Uploads\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Uploads\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:UPLOAD\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d6ac1e20-ed8b-11e6-99eb-d9b4b01f8a7b",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 Users",
+      "visState": "{\"title\":\"Top 10 Users\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Events\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.user_name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Users\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true,\"colors\":{\"Count\":\"#F9934E\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "213492a0-ec93-11e6-8908-7b5a74f0ee71",
+    "_type": "visualization",
+    "_source": {
+      "title": "Previews, Downloads, and Uploads Over Time",
+      "visState": "{\"type\":\"timelion\",\"title\":\"Previews, Downloads, and Uploads Over Time\",\"params\":{\"expression\":\".es(index='box', q='type.keyword=PREVIEW'), .es(index='box', q='type.keyword=DOWNLOAD'), .es(index='box', q='type.keyword=UPLOAD')\",\"interval\":\"auto\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "5e7d5280-ed8a-11e6-99eb-d9b4b01f8a7b",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Files Shared",
+      "visState": "{\"title\":\"Total Files Shared\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Files Shared\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"type.keyword:SHARE\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "decf2ea0-e8c5-11e6-8d99-5f7ec6c1a2af",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 - Most Popular Content",
+      "visState": "{\"title\":\"Top 10 - Most Popular Content\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"type.keyword\",\"customLabel\":\"# of Events\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.item_name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"File Name\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Unique count of type.keyword\":\"#447EBC\",\"# of Events\":\"#447EBC\"}}}",
+      "description": "",
+      "savedSearchId": "283386e0-e8bc-11e6-8337-4bfdb7eac365",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ad6ff460-ec90-11e6-8b6b-0ff34ff8c9d6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Most Active Folder Heatmap",
+      "visState": "{\"title\":\"Most Active Folder Heatmap\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":true,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":6,\"colorSchema\":\"Reds\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.parent.name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Folder Names\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 6\":\"rgb(255,245,240)\",\"6 - 12\":\"rgb(253,212,194)\",\"12 - 18\":\"rgb(252,160,130)\",\"18 - 24\":\"rgb(251,106,74)\",\"24 - 30\":\"rgb(227,47,39)\",\"30 - 35\":\"rgb(177,18,24)\"},\"colors\":{\"0 - 9\":\"#F9934E\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"box\",\"query\":{\"query_string\":{\"query\":\"source.folder_name:*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3ad59e40-e8bd-11e6-8337-4bfdb7eac365",
+    "_type": "visualization",
+    "_source": {
+      "title": "Event Type Breakdown",
+      "visState": "{\"title\":\"Event Type Breakdown\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total Events\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"type.keyword\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Event Type Breakdown\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "283386e0-e8bc-11e6-8337-4bfdb7eac365",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "183a7ce0-ec94-11e6-82fa-7dea2d1ff284",
+    "_type": "visualization",
+    "_source": {
+      "title": "Enterprise Event Timeline",
+      "visState": "{\"title\":\"Enterprise Event Timeline\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index='box', q='type.keyword=UPLOAD').label('Upload').title('Events Over Time') .es(index='box', q='type.keyword=PREVIEW').label('Preview') .es(index='box', q='type.keyword=DOWNLOAD').label('Download') .es(index='box', q='type.keyword=EDIT').label('Edit') .es(index='box', q='type.keyword=SHARE').label('Share') .es(index='box', q='type.keyword= COMMENT_CREATE').label('Comment Created') .es(index='box', q='type.keyword= DELETE').label('Delete')\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

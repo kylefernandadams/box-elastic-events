@@ -1,0 +1,9 @@
+{
+  "size": 1,
+  "_source": ["created_at", "next_stream_position"],
+  "sort": {
+    "created_at": {
+      "order": "desc"
+    }
+  }
+}
