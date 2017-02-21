@@ -164,6 +164,11 @@ tail -f logs/TYPE_CURRENT_DATE_HERE.log
 ./shutdown_allinone.sh
 ```
 
+### How to Increase Ulimit on Mac OS X
+Reference the following blog
+[Ulimit Shenanigans on OS X El Capitan](https://blog.dekstroza.io/ulimit-shenanigans-on-osx-el-capitan/)
+
+
 Disclaimer
 ----------
 This project is an open source extension to the Box platform and is not officially supported by Box, Inc. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-elastic-events/issues).
