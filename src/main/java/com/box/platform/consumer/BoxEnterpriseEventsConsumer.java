@@ -36,7 +36,8 @@ public class BoxEnterpriseEventsConsumer extends UntypedActor{
 
     private static final String BOX_CONFIG_PREFIX = "box.platform.";
     private int futuresTimeout;
-    private int pollingInterval;
+    private int pollingIntervalValue;
+    private String pollingIntervalTimeUnit;
     private boolean isFirstRun = true;
     private String nextStreamPosition;
 
@@ -60,7 +61,8 @@ public class BoxEnterpriseEventsConsumer extends UntypedActor{
         String privateKeyPassword = boxConfig.getString(BOX_CONFIG_PREFIX + "private.key.password");
         int maxCacheEntries = boxConfig.getInt(BOX_CONFIG_PREFIX + "max.cache.entries");
         this.futuresTimeout = boxConfig.getInt("elastic.futures.timeout");
-        this.pollingInterval = boxConfig.getInt("elastic.enterprise.polling.interval");
+        this.pollingIntervalValue = boxConfig.getInt("elastic.enterprise.polling.interval.value");
+        this.pollingIntervalTimeUnit = boxConfig.getString("elastic.enterprise.polling.interval.time.unit");
 
         try{
             // Create JWT Encryption preferences
@@ -115,7 +117,7 @@ public class BoxEnterpriseEventsConsumer extends UntypedActor{
             final ActorRef enterpriseEventJsonParserActor = this.actorSystem.actorOf(Props.create(BoxEnterpriseEventJsonParser.class));
 
             // Create a scheduler
-            cancellable = this.actorSystem.scheduler().schedule(Duration.Zero(), Duration.create(this.pollingInterval, TimeUnit.MINUTES), new Runnable() {
+            cancellable = this.actorSystem.scheduler().schedule(Duration.Zero(), Duration.create(this.pollingIntervalValue, this.pollingIntervalTimeUnit), new Runnable() {
                 public void run() {
                     if(api.needsRefresh()){
                         api.refresh();
